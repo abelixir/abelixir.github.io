@@ -6,66 +6,50 @@
 <title>Abiy Zenagabriel - Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-
+/* Reset and general styles */
 * { margin:0; padding:0; box-sizing:border-box; }
-body { font-family:'Roboto', sans-serif; color:#333; background:#f4f4f4; scroll-behavior:smooth; }
+body { font-family:'Roboto', sans-serif; color:#333; background:#f4f4f4; }
 
-
-.hero {
-  display:flex;
-  flex-direction:row;
-  height:100vh;
+/* Split-screen layout */
+.container {
+  display: flex;
+  min-height: 100vh;
 }
-.hero-left {
-  flex:1;
+
+/* Left panel - static */
+.left-panel {
+  width: 300px;
   background:#0077cc;
   color:white;
+  padding:40px 20px;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding-left:60px;
-}
-.hero-left h1 { font-size:3em; margin-bottom:20px; }
-.hero-left p { font-size:1.3em; margin-bottom:30px; }
-.hero-left .btn { background:white; color:#0077cc; padding:12px 25px; border-radius:5px; font-weight:bold; transition:0.3s; width:fit-content; }
-.hero-left .btn:hover { background:#e0e0e0; }
-
-
-.hero-right {
-  flex:1;
-  background: linear-gradient(to bottom right, #00aaff, #66ccff);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:1.5em;
-  color:white;
-  text-align:center;
-}
-
-/
-nav {
-  position: sticky;
+  position:sticky;
   top:0;
-  background:white;
-  display:flex;
-  justify-content:center;
-  gap:25px;
-  padding:15px;
-  box-shadow:0 2px 5px rgba(0,0,0,0.1);
-  z-index:100;
+  height:100vh;
 }
-nav a { font-weight:700; }
+.left-panel h1 { font-size:2.5em; margin-bottom:15px; }
+.left-panel p { font-size:1.2em; line-height:1.5; }
 
+/* Right panel - scrollable */
+.right-panel {
+  flex:1;
+  padding:40px 30px;
+  overflow-y:auto;
+  max-height:100vh;
+}
+
+/* Sections */
 section {
-  max-width:900px;
-  margin:60px auto;
-  padding:40px 20px;
   background:white;
-  border-radius:12px;
+  padding:30px 20px;
+  margin-bottom:40px;
+  border-radius:10px;
   box-shadow:0 0 15px rgba(0,0,0,0.1);
   opacity:0;
-  transform:translateY(50px);
-  transition:all 0.8s ease-out;
+  transform:translateY(30px);
+  transition: all 0.8s ease-out;
 }
 section.visible { opacity:1; transform:translateY(0); }
 section h2 { color:#0077cc; margin-bottom:20px; border-bottom:3px solid #0077cc; display:inline-block; padding-bottom:5px; }
@@ -77,80 +61,70 @@ li { margin-bottom:10px; }
 .btn:hover { background:#005fa3; }
 
 /* Footer */
-footer { text-align:center; padding:25px; background:#0077cc; color:white; }
+footer { text-align:center; padding:20px; background:#0077cc; color:white; border-radius:10px; }
 
 /* Responsive */
 @media(max-width:768px){
-  .hero { flex-direction:column; height:auto; }
-  .hero-left, .hero-right { flex:unset; padding:40px; }
-  .hero-left h1 { font-size:2.2em; }
-  nav { flex-direction:column; gap:15px; }
-  section { margin:40px 20px; padding:30px 15px; }
+  .container { flex-direction:column; }
+  .left-panel { width:100%; height:auto; position:relative; padding:20px; }
+  .right-panel { max-height:none; padding:20px; }
 }
 </style>
 </head>
 <body>
 
-
-<div class="hero">
-  <div class="hero-left">
+<div class="container">
+  <!-- Left panel -->
+  <div class="left-panel">
     <h1>Abiy Zenagabriel</h1>
     <p>4th Year Computer Science & Engineering Student</p>
-    <a class="btn" href="#about">Explore Portfolio</a>
+    <p>Passionate about Cybersecurity and Web Development</p>
   </div>
-  <div class="hero-right">
-    Welcome to my portfolio
+
+  <!-- Right panel -->
+  <div class="right-panel">
+    <!-- About -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a 4th year Computer Science and Engineering student at Adama Science and Technology University. I am passionate about technology and cybersecurity. I have learned JavaScript, React, and Express and enjoy building projects to enhance my skills.</p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>JavaScript, React, Express</li>
+        <li>Cybersecurity basics & network security</li>
+        <li>HTML, CSS, Responsive Web Design</li>
+        <li>Basic Networking and Cybersecurity</li>
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <h2>Projects</h2>
+      <p>You can see some of my projects on GitHub:</p>
+      <a class="btn" href="https://github.com/abelixir" target="_blank">My GitHub Portfolio</a>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul>
+        <li>Email: <a href="mailto:abiyzenagabriela@gmail.com">abiyzenagabriela@gmail.com</a></li>
+        <li>GitHub: <a href="https://github.com/abelixir" target="_blank">https://github.com/abelixir</a></li>
+      </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      &copy; 2026 Abiy Zenagabriel | Built with HTML, CSS & JavaScript
+    </footer>
   </div>
 </div>
 
-<!-- Navigation -->
-<nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<!-- About Section -->
-<section id="about">
-<h2>About Me</h2>
-<p>I am a 4th year Computer Science and Engineering student at Adama Science and Technology University. 
-I am passionate about technology and cybersecurity. I have learned JavaScript, React, and Express and enjoy building projects to enhance my skills.</p>
-</section>
-
-<!-- Skills Section -->
-<section id="skills">
-<h2>Skills</h2>
-<ul>
-<li>JavaScript, React, Express</li>
-<li>Cybersecurity basics & network security</li>
-<li>HTML, CSS, Responsive Web Design</li>
-<li>Basic Networking and Cybersecurity</li>
-</ul>
-</section>
-
-<section id="projects">
-<h2>Projects</h2>
-<p>You can see some of my projects on GitHub:</p>
-<a class="btn" href="https://github.com/abelixir" target="_blank">My GitHub Portfolio</a>
-</section>
-
-
-<section id="contact">
-<h2>Contact</h2>
-<ul>
-<li>Email: <a href="mailto:abiyzenagabriela@gmail.com">abiyzenagabriela@gmail.com</a></li>
-<li>GitHub: <a href="https://github.com/abelixir" target="_blank">https://github.com/abelixir</a></li>
-</ul>
-</section>
-
-
-<footer>
-&copy; 2026 Abiy Zenagabriel | Built with HTML, CSS & JavaScript
-</footer>
-
 <script>
-
+// Animate sections on scroll
 const sections = document.querySelectorAll('section');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
