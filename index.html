@@ -6,11 +6,11 @@
 <title>Abiy Zenagabriel - Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* General Reset */
+
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Roboto', sans-serif; color:#333; background:#f4f4f4; scroll-behavior:smooth; }
 
-/* Hero / Split Screen */
+
 .hero {
   display:flex;
   flex-direction:row;
@@ -30,7 +30,7 @@ body { font-family:'Roboto', sans-serif; color:#333; background:#f4f4f4; scroll-
 .hero-left .btn { background:white; color:#0077cc; padding:12px 25px; border-radius:5px; font-weight:bold; transition:0.3s; width:fit-content; }
 .hero-left .btn:hover { background:#e0e0e0; }
 
-/* Right Side: image, illustration, or empty color for now */
+
 .hero-right {
   flex:1;
   background: linear-gradient(to bottom right, #00aaff, #66ccff);
@@ -42,7 +42,7 @@ body { font-family:'Roboto', sans-serif; color:#333; background:#f4f4f4; scroll-
   text-align:center;
 }
 
-/* Navigation */
+/
 nav {
   position: sticky;
   top:0;
@@ -56,7 +56,6 @@ nav {
 }
 nav a { font-weight:700; }
 
-/* Sections */
 section {
   max-width:900px;
   margin:60px auto;
@@ -92,11 +91,11 @@ footer { text-align:center; padding:25px; background:#0077cc; color:white; }
 </head>
 <body>
 
-<!-- Hero / Split Screen -->
+
 <div class="hero">
   <div class="hero-left">
     <h1>Abiy Zenagabriel</h1>
-    <p>4th Year Computer Science & Engineering Student<br>Cybersecurity & Web Developer</p>
+    <p>4th Year Computer Science & Engineering Student</p>
     <a class="btn" href="#about">Explore Portfolio</a>
   </div>
   <div class="hero-right">
@@ -126,18 +125,17 @@ I am passionate about technology and cybersecurity. I have learned JavaScript, R
 <li>JavaScript, React, Express</li>
 <li>Cybersecurity basics & network security</li>
 <li>HTML, CSS, Responsive Web Design</li>
-<li>Git & GitHub version control</li>
+<li>Basic Networking and Cybersecurity</li>
 </ul>
 </section>
 
-<!-- Projects Section -->
 <section id="projects">
 <h2>Projects</h2>
 <p>You can see some of my projects on GitHub:</p>
 <a class="btn" href="https://github.com/abelixir" target="_blank">My GitHub Portfolio</a>
 </section>
 
-<!-- Contact Section -->
+
 <section id="contact">
 <h2>Contact</h2>
 <ul>
@@ -146,13 +144,13 @@ I am passionate about technology and cybersecurity. I have learned JavaScript, R
 </ul>
 </section>
 
-<!-- Footer -->
+
 <footer>
 &copy; 2026 Abiy Zenagabriel | Built with HTML, CSS & JavaScript
 </footer>
 
 <script>
-// Animate sections on scroll
+
 const sections = document.querySelectorAll('section');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
