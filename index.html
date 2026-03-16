@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abiy Zenagabriel - Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* General Styles */
+  body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+  a { color: #0077cc; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* Header */
+  header {
+    background: #0077cc;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  header h1 { margin: 0; font-size: 2.5em; }
+  header p { font-size: 1.2em; margin-top: 10px; }
+
+  /* Sections */
+  section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  section h2 {
+    color: #0077cc;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #0077cc;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+
+  ul { list-style: none; padding-left: 0; }
+  li { margin-bottom: 8px; }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #0077cc;
+    color: white;
+  }
+
+  /* Responsive */
+  @media(max-width: 600px){
+    header h1 { font-size: 2em; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <h1>Abiy Zenagabriel</h1>
+  <p>4th Year Computer Science & Engineering Student | Cybersecurity & Web Developer</p>
+</header>
+
+<!-- About Me -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I am a 4th year Computer Science and Engineering student at Adama Science and Technology University. 
+    I am passionate about technology and cybersecurity. I have learned JavaScript, React, and Express and enjoy building small projects to enhance my skills.
+  </p>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+  <h2>Skills</h2>
+  <ul>
+    <li>JavaScript, React, Express</li>
+    <li>Cybersecurity basics and network security</li>
+    <li>HTML, CSS, Responsive Web Design</li>
+    <li>GitHub version control</li>
+  </ul>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+  <h2>Projects</h2>
+  <p>You can see some of my projects on GitHub:</p>
+  <ul>
+    <li><a href="https://github.com/abelixir" target="_blank">My GitHub Portfolio</a></li>
+  </ul>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <h2>Contact</h2>
+  <ul>
+    <li>Email: <a href="mailto:abiyzenagabriela@gmail.com">abiyzenagabriela@gmail.com</a></li>
+    <li>GitHub: <a href="https://github.com/abelixir" target="_blank">https://github.com/abelixir</a></li>
+  </ul>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2026 Abiy Zenagabriel | Built with HTML, CSS & JavaScript
+</footer>
+
+<script>
+  // Animate sections when scrolling
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>
