@@ -6,29 +6,43 @@
 <title>Abiy Zenagabriel - Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* Reset and general styles */
+/* General Reset */
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'Roboto', sans-serif; color:#333; background:#f4f4f4; scroll-behavior:smooth; }
-a { color:#0077cc; text-decoration:none; }
-a:hover { text-decoration:underline; }
 
-/* Hero section */
+/* Hero / Split Screen */
 .hero {
+  display:flex;
+  flex-direction:row;
   height:100vh;
-  background: linear-gradient(to right, #0077cc, #00aaff);
+}
+.hero-left {
+  flex:1;
+  background:#0077cc;
   color:white;
   display:flex;
   flex-direction:column;
   justify-content:center;
+  padding-left:60px;
+}
+.hero-left h1 { font-size:3em; margin-bottom:20px; }
+.hero-left p { font-size:1.3em; margin-bottom:30px; }
+.hero-left .btn { background:white; color:#0077cc; padding:12px 25px; border-radius:5px; font-weight:bold; transition:0.3s; width:fit-content; }
+.hero-left .btn:hover { background:#e0e0e0; }
+
+/* Right Side: image, illustration, or empty color for now */
+.hero-right {
+  flex:1;
+  background: linear-gradient(to bottom right, #00aaff, #66ccff);
+  display:flex;
   align-items:center;
+  justify-content:center;
+  font-size:1.5em;
+  color:white;
   text-align:center;
 }
-.hero h1 { font-size:3em; margin-bottom:10px; }
-.hero p { font-size:1.2em; margin-bottom:20px; }
-.hero .btn { background:white; color:#0077cc; padding:12px 25px; border-radius:5px; font-weight:bold; transition:0.3s; }
-.hero .btn:hover { background:#e0e0e0; }
 
-/* Navigation bar */
+/* Navigation */
 nav {
   position: sticky;
   top:0;
@@ -68,7 +82,9 @@ footer { text-align:center; padding:25px; background:#0077cc; color:white; }
 
 /* Responsive */
 @media(max-width:768px){
-  .hero h1 { font-size:2.2em; }
+  .hero { flex-direction:column; height:auto; }
+  .hero-left, .hero-right { flex:unset; padding:40px; }
+  .hero-left h1 { font-size:2.2em; }
   nav { flex-direction:column; gap:15px; }
   section { margin:40px 20px; padding:30px 15px; }
 }
@@ -76,11 +92,16 @@ footer { text-align:center; padding:25px; background:#0077cc; color:white; }
 </head>
 <body>
 
-<!-- Hero / Landing -->
+<!-- Hero / Split Screen -->
 <div class="hero">
-<h1>Abiy Zenagabriel</h1>
-<p>4th Year Computer Science & Engineering Student | Cybersecurity & Web Developer</p>
-<a class="btn" href="#about">Explore My Portfolio</a>
+  <div class="hero-left">
+    <h1>Abiy Zenagabriel</h1>
+    <p>4th Year Computer Science & Engineering Student<br>Cybersecurity & Web Developer</p>
+    <a class="btn" href="#about">Explore Portfolio</a>
+  </div>
+  <div class="hero-right">
+    Welcome to my portfolio
+  </div>
 </div>
 
 <!-- Navigation -->
@@ -131,7 +152,7 @@ I am passionate about technology and cybersecurity. I have learned JavaScript, R
 </footer>
 
 <script>
-// Animate sections when scrolling
+// Animate sections on scroll
 const sections = document.querySelectorAll('section');
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
