@@ -1,58 +1,288 @@
-<!-- ONLY showing modified parts for clarity -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abiy Zenagabriel | Portfolio</title>
 
-<!-- ABOUT -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<style>
+:root {
+    --bg: #020617;
+    --panel: #0f172a;
+    --accent: #3b82f6;
+    --text: #e5e7eb;
+    --muted: #94a3b8;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top, #0f172a, #020617);
+    color: var(--text);
+}
+
+/* LAYOUT */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* LEFT PANEL */
+.left-panel {
+    width: 300px;
+    background: linear-gradient(180deg, #020617, #0f172a);
+    padding: 3rem 2rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    border-right: 1px solid rgba(255,255,255,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.left-panel h1 {
+    font-size: 2.3rem;
+    text-align: center;
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.title {
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--muted);
+}
+
+.nav {
+    margin-top: 2rem;
+}
+
+.nav a {
+    display: block;
+    padding: 12px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: var(--muted);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    background: rgba(59,130,246,0.1);
+    color: var(--accent);
+    box-shadow: 0 0 10px rgba(59,130,246,0.3);
+}
+
+/* RIGHT PANEL */
+.right-panel {
+    flex: 1;
+    padding: 3rem;
+}
+
+/* SECTION */
+section {
+    margin-bottom: 5rem;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.6s;
+}
+
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    font-size: 2.3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(90deg, #60a5fa, #3b82f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* SKILLS */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 1.5rem;
+}
+
+.skill-card {
+    background: rgba(255,255,255,0.03);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(59,130,246,0.3);
+}
+
+.skill-card h3 {
+    color: #60a5fa;
+    margin-bottom: 1rem;
+}
+
+.skill-list li {
+    list-style: none;
+    margin: 6px 0;
+}
+
+/* PROJECT */
+.project-card {
+    background: rgba(255,255,255,0.03);
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(59,130,246,0.3);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 12px 20px;
+    background: linear-gradient(135deg,#3b82f6,#2563eb);
+    color: white;
+    border-radius: 999px;
+    text-decoration: none;
+}
+
+/* CONTACT */
+a {
+    color: var(--muted);
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+    .container {
+        flex-direction: column;
+    }
+
+    .left-panel {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LEFT -->
+<div class="left-panel">
+    <h1>Abiy Zenagabriel</h1>
+    <p class="title">Full Stack Developer</p>
+
+    <div class="nav">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </div>
+</div>
+
+<!-- RIGHT -->
+<div class="right-panel">
+
 <section id="about">
     <h2 class="section-title">About Me</h2>
     <p>
-        I am a 4th year Computer Science and Engineering student at Adama Science and Technology University. 
-        I am passionate about technology and web development, with experience in building modern web applications 
-        using JavaScript, React, and Express. I also have a growing interest in cybersecurity and networking.
+        I am a 4th year Computer Science student passionate about building modern web applications.
+        I have experience with JavaScript, React, and Express, and I enjoy solving real-world problems 
+        through code. I also have a growing interest in cybersecurity and networking.
     </p>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
-    <h2 class="section-title">Skills &amp; Technologies</h2>
+    <h2 class="section-title">Skills</h2>
     <div class="skills-grid">
+
         <div class="skill-card">
-            <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+            <h3>Frontend</h3>
             <ul class="skill-list">
-                <li>HTML5 &amp; CSS3</li>
-                <li>JavaScript (ES6+)</li>
-                <li>React.js</li>
-                <li>Responsive Web Design</li>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
             </ul>
         </div>
+
         <div class="skill-card">
-            <h3><i class="fas fa-server"></i> Backend</h3>
+            <h3>Backend</h3>
             <ul class="skill-list">
                 <li>Node.js</li>
-                <li>Express.js</li>
+                <li>Express</li>
             </ul>
         </div>
+
         <div class="skill-card">
-            <h3><i class="fas fa-tools"></i> Tools</h3>
+            <h3>Tools</h3>
             <ul class="skill-list">
-                <li>Git &amp; GitHub</li>
+                <li>Git & GitHub</li>
                 <li>C++</li>
             </ul>
         </div>
+
     </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
-    <h2 class="section-title">Some of My Projects</h2>
-    
-    <div class="projects-grid">
-        <div class="project-card">
-            <h3>Explore My Work</h3>
-            <p style="color: #94a3b8; margin: 1.5rem 0;">
-                Some of my projects and contributions are available on my GitHub profile.
-            </p>
-            <a href="https://github.com/abelixir" target="_blank" class="btn">
-                <i class="fab fa-github"></i> Visit My GitHub
-            </a>
-        </div>
+    <h2 class="section-title">Projects</h2>
+    <div class="project-card">
+        <h3>My Work</h3>
+        <p>
+            I have developed several projects focused on web development and problem solving.
+            Explore them on my GitHub.
+        </p>
+        <a href="https://github.com/abelixir" target="_blank" class="btn">
+            Visit GitHub
+        </a>
     </div>
 </section>
+
+<section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p>Email: <a href="mailto:abiyzenagabriela@gmail.com">abiyzenagabriela@gmail.com</a></p>
+</section>
+
+</div>
+</div>
+
+<script>
+// SCROLL ANIMATION
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if(top < window.innerHeight - 100){
+            sec.classList.add("show");
+        }
+    });
+});
+</script>
+
+</body>
+</html>
