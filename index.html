@@ -1,288 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abiy Zenagabriel | Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<style>
-:root {
-    --bg: #020617;
-    --panel: #0f172a;
-    --accent: #3b82f6;
-    --text: #e5e7eb;
-    --muted: #94a3b8;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at top, #0f172a, #020617);
-    color: var(--text);
-}
-
-/* LAYOUT */
-.container {
-    display: flex;
-    min-height: 100vh;
-}
-
-/* LEFT PANEL */
-.left-panel {
-    width: 300px;
-    background: linear-gradient(180deg, #020617, #0f172a);
-    padding: 3rem 2rem;
-    position: sticky;
-    top: 0;
-    height: 100vh;
-    border-right: 1px solid rgba(255,255,255,0.05);
-    display: flex;
-    flex-direction: column;
-}
-
-.left-panel h1 {
-    font-size: 2.3rem;
-    text-align: center;
-    background: linear-gradient(90deg, #60a5fa, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.title {
-    text-align: center;
-    margin: 1rem 0;
-    color: var(--muted);
-}
-
-.nav {
-    margin-top: 2rem;
-}
-
-.nav a {
-    display: block;
-    padding: 12px;
-    margin-bottom: 10px;
-    text-decoration: none;
-    color: var(--muted);
-    border-radius: 10px;
-    transition: 0.3s;
-}
-
-.nav a:hover {
-    background: rgba(59,130,246,0.1);
-    color: var(--accent);
-    box-shadow: 0 0 10px rgba(59,130,246,0.3);
-}
-
-/* RIGHT PANEL */
-.right-panel {
-    flex: 1;
-    padding: 3rem;
-}
-
-/* SECTION */
-section {
-    margin-bottom: 5rem;
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 0.6s;
-}
-
-section.show {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.section-title {
-    font-size: 2.3rem;
-    margin-bottom: 1.5rem;
-    background: linear-gradient(90deg, #60a5fa, #3b82f6);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-/* SKILLS */
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 1.5rem;
-}
-
-.skill-card {
-    background: rgba(255,255,255,0.03);
-    border-radius: 16px;
-    padding: 1.5rem;
-    backdrop-filter: blur(10px);
-    transition: 0.3s;
-}
-
-.skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px rgba(59,130,246,0.3);
-}
-
-.skill-card h3 {
-    color: #60a5fa;
-    margin-bottom: 1rem;
-}
-
-.skill-list li {
-    list-style: none;
-    margin: 6px 0;
-}
-
-/* PROJECT */
-.project-card {
-    background: rgba(255,255,255,0.03);
-    padding: 2rem;
-    border-radius: 16px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 25px rgba(59,130,246,0.3);
-}
-
-.btn {
-    display: inline-block;
-    margin-top: 1rem;
-    padding: 12px 20px;
-    background: linear-gradient(135deg,#3b82f6,#2563eb);
-    color: white;
-    border-radius: 999px;
-    text-decoration: none;
-}
-
-/* CONTACT */
-a {
-    color: var(--muted);
-}
-
-a:hover {
-    color: var(--accent);
-}
-
-/* MOBILE */
-@media(max-width:768px){
-    .container {
-        flex-direction: column;
-    }
-
-    .left-panel {
-        width: 100%;
-        height: auto;
-        position: relative;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<!-- LEFT -->
-<div class="left-panel">
-    <h1>Abiy Zenagabriel</h1>
-    <p class="title">Full Stack Developer</p>
-
-    <div class="nav">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
-</div>
-
-<!-- RIGHT -->
-<div class="right-panel">
-
-<section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p>
-        I am a 4th year Computer Science student passionate about building modern web applications.
-        I have experience with JavaScript, React, and Express, and I enjoy solving real-world problems 
-        through code. I also have a growing interest in cybersecurity and networking.
-    </p>
-</section>
-
-<section id="skills">
-    <h2 class="section-title">Skills</h2>
-    <div class="skills-grid">
-
-        <div class="skill-card">
-            <h3>Frontend</h3>
-            <ul class="skill-list">
-                <li>HTML & CSS</li>
-                <li>JavaScript</li>
-                <li>React</li>
-            </ul>
-        </div>
-
-        <div class="skill-card">
-            <h3>Backend</h3>
-            <ul class="skill-list">
-                <li>Node.js</li>
-                <li>Express</li>
-            </ul>
-        </div>
-
-        <div class="skill-card">
-            <h3>Tools</h3>
-            <ul class="skill-list">
-                <li>Git & GitHub</li>
-                <li>C++</li>
-            </ul>
-        </div>
-
-    </div>
-</section>
-
-<section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="project-card">
-        <h3>My Work</h3>
-        <p>
-            I have developed several projects focused on web development and problem solving.
-            Explore them on my GitHub.
-        </p>
-        <a href="https://github.com/abelixir" target="_blank" class="btn">
-            Visit GitHub
-        </a>
-    </div>
-</section>
-
-<section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p>Email: <a href="mailto:abiyzenagabriela@gmail.com">abiyzenagabriela@gmail.com</a></p>
-</section>
-
-</div>
-</div>
-
-<script>
-// SCROLL ANIMATION
-const sections = document.querySelectorAll("section");
-
-window.addEventListener("scroll", () => {
-    sections.forEach(sec => {
-        const top = sec.getBoundingClientRect().top;
-        if(top < window.innerHeight - 100){
-            sec.classList.add("show");
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abiy Zenagabriel | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg: #020617;
+            --panel: #0f172a;
+            --accent: #3b82f6;
+            --text: #e5e7eb;
+            --muted: #94a3b8;
         }
-    });
-});
-</script>
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* ==================== LEFT PANEL ==================== */
+        .left-panel {
+            width: 320px;
+            background: linear-gradient(180deg, #020617, #0f172a);
+            padding: 3.5rem 2rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            border-right: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .left-panel h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            background: linear-gradient(90deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .title {
+            text-align: center;
+            color: var(--muted);
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .nav {
+            margin-top: 1.5rem;
+        }
+
+        .nav a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: var(--muted);
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.4s ease;
+        }
+
+        .nav a:hover {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--accent);
+            transform: translateX(8px);
+        }
+
+        .nav a i {
+            width: 20px;
+        }
+
+        /* ==================== RIGHT PANEL ==================== */
+        .right-panel {
+            flex: 1;
+            padding: 4rem 3.5rem;
+            overflow-y: auto;
+            max-height: 100vh;
+            background: var(--bg);
+        }
+
+        section {
+            margin-bottom: 6rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            background: linear-gradient(90deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .skill-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 1.8rem;
+            transition: all 0.4s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 30px rgba(59, 130, 246, 0.15);
+        }
+
+        .skill-card h3 {
+            color: #60a5fa;
+            margin-bottom: 1.2rem;
+            font-size: 1.35rem;
+        }
+
+        .skill-list li {
+            margin: 10px 0;
+            padding-left: 6px;
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: "▹";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Projects */
+        .project-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            border-color: var(--accent);
+            box-shadow: 0 25px 40px rgba(59, 130, 246, 0.2);
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1.5rem;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(59, 130, 246, 0.4);
+        }
+
+        /* Contact */
+        .contact-info {
+            font-size: 1.1rem;
+        }
+
+        .contact-info a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 0;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .left-panel {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 2.5rem 1.5rem;
+            }
+            .right-panel {
+                padding: 2.5rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- LEFT PANEL -->
+        <div class="left-panel">
+            <h1>Abiy Zenagabriel</h1>
+            <p class="title">4th Year Computer Science &amp; Engineering Student</p>
+
+            <div class="nav">
+                <a href="#about"><i class="fas fa-user"></i> About</a>
+                <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+                <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+            
+            <!-- ABOUT -->
+            <section id="about">
+                <h2 class="section-title">About Me</h2>
+                <p>
+                    I am a 4th year Computer Science and Engineering student at Adama Science and Technology University. 
+                    I am passionate about technology and cybersecurity. I have learned JavaScript, React, and Express 
+                    and enjoy building projects to enhance my skills. 
+                    I also love cybersecurity and networking.
+                </p>
+            </section>
+
+            <!-- SKILLS -->
+            <section id="skills">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Frontend</h3>
+                        <ul class="skill-list">
+                            <li>HTML &amp; CSS</li>
+                            <li>JavaScript</li>
+                            <li>React</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Backend</h3>
+                        <ul class="skill-list">
+                            <li>Node.js</li>
+                            <li>Express</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Tools &amp; Others</h3>
+                        <ul class="skill-list">
+                            <li>Git &amp; GitHub</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects">
+                <h2 class="section-title">Some of My Projects</h2>
+                <div class="project-card">
+                    <h3 style="font-size: 1.6rem; margin-bottom: 1rem;">Check out my work on GitHub</h3>
+                    <p style="color: var(--muted); max-width: 420px; margin: 0 auto 1.5rem;">
+                        I have developed several projects focused on web development and problem solving. 
+                        Explore them on my GitHub.
+                    </p>
+                    <a href="https://github.com/abelixir" target="_blank" class="btn">
+                        <i class="fab fa-github"></i> Visit My GitHub
+                    </a>
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> 
+                        <a href="mailto:abiyzenagabriela@gmail.com">abiyzenagabriela@gmail.com</a>
+                    </p>
+                    <p style="margin-top: 1.2rem;">
+                        <strong>GitHub:</strong> 
+                        <a href="https://github.com/abelixir" target="_blank">github.com/abelixir</a>
+                    </p>
+                </div>
+            </section>
+
+            <footer>
+                © 2026 Abiy Zenagabriel | Built with ❤️ using HTML, CSS &amp; JavaScript
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        // Smooth scroll animation with Intersection Observer (better performance)
+        const sections = document.querySelectorAll("section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
