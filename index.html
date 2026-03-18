@@ -33,7 +33,7 @@
             min-height: 100vh;
         }
 
-        /* ==================== LEFT PANEL ==================== */
+        /* LEFT PANEL */
         .left-panel {
             width: 340px;
             background: linear-gradient(180deg, var(--primary) 0%, var(--dark) 100%);
@@ -132,7 +132,7 @@
             transform: translateY(-5px);
         }
 
-        /* ==================== RIGHT PANEL ==================== */
+        /* RIGHT PANEL */
         .right-panel {
             flex: 1;
             padding: 4rem 3.5rem;
@@ -173,7 +173,7 @@
             border-radius: 4px;
         }
 
-        /* About */
+        /* About - Using your exact description */
         #about p {
             font-size: 1.15rem;
             color: #cbd5e1;
@@ -357,7 +357,7 @@
 
             <h1>Abiy Zenagabriel</h1>
             <p class="title">4th Year Computer Science &amp; Engineering Student</p>
-            <p>Passionate about Cybersecurity &amp; Full-Stack Web Development</p>
+            <p>Passionate about Cybersecurity and Web Development</p>
 
             <div class="nav">
                 <a href="#about"><i class="fas fa-user"></i> About</a>
@@ -375,17 +375,13 @@
         <!-- RIGHT PANEL -->
         <div class="right-panel">
             
-            <!-- ABOUT -->
+            <!-- ABOUT - Using your exact original description -->
             <section id="about">
                 <h2 class="section-title">About Me</h2>
                 <p>
-                    I am a 4th-year Computer Science and Engineering student at <strong>Adama Science and Technology University</strong>. 
-                    With a strong passion for technology, I specialize in Cybersecurity and Full-Stack Web Development. 
-                    I enjoy turning complex problems into simple, secure, and elegant solutions through clean and efficient code.
-                </p>
-                <p style="margin-top: 1.5rem;">
-                    Currently expanding my knowledge in ethical hacking, network security, and modern web technologies. 
-                    I believe in continuous learning and hands-on project building.
+                    I am a 4th year Computer Science and Engineering student at Adama Science and Technology University. 
+                    I am passionate about technology and cybersecurity. I have learned JavaScript, React, and Express 
+                    and enjoy building projects to enhance my skills.
                 </p>
             </section>
 
@@ -400,33 +396,28 @@
                             <li>JavaScript (ES6+)</li>
                             <li>React.js</li>
                             <li>Responsive Web Design</li>
-                            <li>Tailwind / Bootstrap (basics)</li>
                         </ul>
                     </div>
                     <div class="skill-card">
                         <h3><i class="fas fa-server"></i> Backend</h3>
                         <ul class="skill-list">
-                            <li>Node.js &amp; Express</li>
-                            <li>RESTful APIs</li>
-                            <li>MySQL / MongoDB Basics</li>
+                            <li>Express.js</li>
+                            <li>Node.js</li>
                         </ul>
                     </div>
                     <div class="skill-card">
                         <h3><i class="fas fa-shield-alt"></i> Cybersecurity</h3>
                         <ul class="skill-list">
                             <li>Basic Networking</li>
-                            <li>Ethical Hacking Fundamentals</li>
-                            <li>Secure Coding Practices</li>
-                            <li>Web Application Security</li>
+                            <li>Ethical Hacking Basics</li>
+                            <li>Secure Coding</li>
                         </ul>
                     </div>
                     <div class="skill-card">
                         <h3><i class="fas fa-tools"></i> Tools &amp; Others</h3>
                         <ul class="skill-list">
                             <li>Git &amp; GitHub</li>
-                            <li>Linux Basics</li>
                             <li>C++</li>
-                            <li>Problem Solving</li>
                         </ul>
                     </div>
                 </div>
@@ -441,12 +432,11 @@
                         <div class="card-header"></div>
                         <div class="content">
                             <h3>Personal Expense Tracker</h3>
-                            <p>Full-stack web application that helps users track daily expenses with visual charts, categories, and monthly reports.</p>
+                            <p>Full-stack expense management application built with React, Express and MySQL. Includes charts and summaries.</p>
                             <div class="tech-tags">
                                 <span>React</span>
                                 <span>Express</span>
                                 <span>MySQL</span>
-                                <span>Chart.js</span>
                             </div>
                             <a href="https://github.com/abelixir" target="_blank" class="btn">
                                 <i class="fab fa-github"></i> View on GitHub
@@ -458,7 +448,7 @@
                         <div class="card-header"></div>
                         <div class="content">
                             <h3>Task Management System</h3>
-                            <p>Collaborative todo and project management app with user authentication, real-time updates, and clean UI.</p>
+                            <p>Complete task and project management web app with user authentication and clean interface.</p>
                             <div class="tech-tags">
                                 <span>React</span>
                                 <span>Express.js</span>
@@ -492,7 +482,7 @@
         </div>
     </div>
 
-    <!-- Intersection Observer Animation Script -->
+    <!-- Animation Script -->
     <script>
         const sections = document.querySelectorAll('section');
         
@@ -503,24 +493,19 @@
                 }
             });
         }, {
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
+            threshold: 0.15
         });
 
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+        sections.forEach(section => observer.observe(section));
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('.nav a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href').substring(1);
                 const targetSection = document.getElementById(targetId);
                 if (targetSection) {
-                    targetSection.scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
                 }
             });
         });
