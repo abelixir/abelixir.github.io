@@ -48,20 +48,6 @@
             z-index: 10;
         }
 
-        .profile-img {
-            width: 170px;
-            height: 170px;
-            border-radius: 50%;
-            border: 5px solid var(--accent);
-            margin: 0 auto 1.8rem;
-            box-shadow: 0 0 40px rgba(30, 144, 255, 0.5);
-            transition: transform 0.6s ease;
-        }
-
-        .profile-img:hover {
-            transform: scale(1.08);
-        }
-
         .left-panel h1 {
             font-size: 2.6rem;
             font-weight: 700;
@@ -173,7 +159,7 @@
             border-radius: 4px;
         }
 
-        /* About - Using your exact description */
+        /* About */
         #about p {
             font-size: 1.15rem;
             color: #cbd5e1;
@@ -238,47 +224,20 @@
             overflow: hidden;
             border: 1px solid rgba(30, 144, 255, 0.15);
             transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            text-align: center;
+            padding: 3rem 2rem;
         }
 
         .project-card:hover {
-            transform: translateY(-15px) scale(1.03);
+            transform: translateY(-10px);
             border-color: var(--accent);
-            box-shadow: 0 25px 50px -12px rgba(30, 144, 255, 0.3);
-        }
-
-        .project-card .card-header {
-            height: 8px;
-            background: linear-gradient(90deg, var(--accent), #3b82f6);
-        }
-
-        .project-card .content {
-            padding: 1.8rem;
+            box-shadow: 0 20px 40px rgba(30, 144, 255, 0.2);
         }
 
         .project-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-
-        .project-card p {
-            color: #94a3b8;
-            margin-bottom: 1.5rem;
-            font-size: 1.05rem;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tags span {
-            background: rgba(30, 144, 255, 0.15);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
             color: var(--accent);
-            padding: 4px 12px;
-            border-radius: 9999px;
-            font-size: 0.85rem;
         }
 
         .btn {
@@ -287,10 +246,11 @@
             gap: 8px;
             background: var(--accent);
             color: white;
-            padding: 12px 24px;
+            padding: 14px 28px;
             border-radius: 9999px;
             text-decoration: none;
             font-weight: 600;
+            margin-top: 1rem;
             transition: all 0.3s ease;
         }
 
@@ -321,21 +281,13 @@
 
         /* Animations */
         @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
+            .container { flex-direction: column; }
             .left-panel {
                 width: 100%;
                 height: auto;
@@ -353,8 +305,6 @@
     <div class="container">
         <!-- LEFT PANEL -->
         <div class="left-panel">
-            <img src="https://picsum.photos/id/64/400/400" alt="Abiy Zenagabriel" class="profile-img">
-
             <h1>Abiy Zenagabriel</h1>
             <p class="title">4th Year Computer Science &amp; Engineering Student</p>
             <p>Passionate about Cybersecurity and Web Development</p>
@@ -375,13 +325,14 @@
         <!-- RIGHT PANEL -->
         <div class="right-panel">
             
-            <!-- ABOUT - Using your exact original description -->
+            <!-- ABOUT -->
             <section id="about">
                 <h2 class="section-title">About Me</h2>
                 <p>
                     I am a 4th year Computer Science and Engineering student at Adama Science and Technology University. 
                     I am passionate about technology and cybersecurity. I have learned JavaScript, React, and Express 
-                    and enjoy building projects to enhance my skills.
+                    and enjoy building projects to enhance my skills. 
+                    I also love cybersecurity and networking.
                 </p>
             </section>
 
@@ -406,14 +357,6 @@
                         </ul>
                     </div>
                     <div class="skill-card">
-                        <h3><i class="fas fa-shield-alt"></i> Cybersecurity</h3>
-                        <ul class="skill-list">
-                            <li>Basic Networking</li>
-                            <li>Ethical Hacking Basics</li>
-                            <li>Secure Coding</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
                         <h3><i class="fas fa-tools"></i> Tools &amp; Others</h3>
                         <ul class="skill-list">
                             <li>Git &amp; GitHub</li>
@@ -425,41 +368,18 @@
 
             <!-- PROJECTS -->
             <section id="projects">
-                <h2 class="section-title">Featured Projects</h2>
+                <h2 class="section-title">Some of My Projects</h2>
+                
                 <div class="projects-grid">
-                    
                     <div class="project-card">
-                        <div class="card-header"></div>
-                        <div class="content">
-                            <h3>Personal Expense Tracker</h3>
-                            <p>Full-stack expense management application built with React, Express and MySQL. Includes charts and summaries.</p>
-                            <div class="tech-tags">
-                                <span>React</span>
-                                <span>Express</span>
-                                <span>MySQL</span>
-                            </div>
-                            <a href="https://github.com/abelixir" target="_blank" class="btn">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
-                        </div>
+                        <h3>Check out my work on GitHub</h3>
+                        <p style="color: #94a3b8; margin: 1.5rem 0;">
+                            You can see all my projects and contributions here
+                        </p>
+                        <a href="https://github.com/abelixir" target="_blank" class="btn">
+                            <i class="fab fa-github"></i> Visit My GitHub
+                        </a>
                     </div>
-
-                    <div class="project-card">
-                        <div class="card-header"></div>
-                        <div class="content">
-                            <h3>Task Management System</h3>
-                            <p>Complete task and project management web app with user authentication and clean interface.</p>
-                            <div class="tech-tags">
-                                <span>React</span>
-                                <span>Express.js</span>
-                                <span>JavaScript</span>
-                            </div>
-                            <a href="https://github.com/abelixir" target="_blank" class="btn">
-                                <i class="fab fa-github"></i> View on GitHub
-                            </a>
-                        </div>
-                    </div>
-
                 </div>
             </section>
 
@@ -492,9 +412,7 @@
                     entry.target.classList.add('visible');
                 }
             });
-        }, {
-            threshold: 0.15
-        });
+        }, { threshold: 0.15 });
 
         sections.forEach(section => observer.observe(section));
 
