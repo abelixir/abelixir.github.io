@@ -34,7 +34,7 @@
             min-height: 100vh;
         }
 
-        /* LEFT PANEL - Professional Sidebar */
+       
         .left-panel {
             width: 340px;
             background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
@@ -94,7 +94,7 @@
             font-size: 1.1rem;
         }
 
-        /* Social Icons */
+     
         .social {
             margin-top: auto;
             display: flex;
@@ -113,7 +113,7 @@
             transform: translateY(-6px);
         }
 
-        /* RIGHT PANEL */
+        
         .right-panel {
             flex: 1;
             padding: 4.5rem 4rem;
@@ -143,7 +143,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Skills */
+        
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -184,7 +184,7 @@
             font-size: 1.3rem;
         }
 
-        /* Projects */
+    
         .project-card {
             background: rgba(255,255,255,0.04);
             border: 1px solid rgba(255,255,255,0.1);
@@ -220,7 +220,6 @@
             box-shadow: 0 15px 30px rgba(59, 130, 246, 0.5);
         }
 
-        /* Contact */
         .contact-info {
             font-size: 1.15rem;
             line-height: 2.2;
@@ -236,7 +235,7 @@
             color: var(--accent);
         }
 
-        /* Footer */
+       
         footer {
             text-align: center;
             padding: 3.5rem 0 2rem;
@@ -244,7 +243,7 @@
             font-size: 0.95rem;
         }
 
-        /* Responsive */
+        
         @media (max-width: 768px) {
             .container { flex-direction: column; }
             .left-panel {
@@ -277,10 +276,10 @@
             </div>
         </div>
 
-        <!-- RIGHT PANEL -->
+       
         <div class="right-panel">
             
-            <!-- ABOUT -->
+            
             <section id="about">
                 <h2 class="section-title">About Me</h2>
                 <p>
@@ -321,7 +320,7 @@
                 </div>
             </section>
 
-            <!-- PROJECTS -->
+            
             <section id="projects">
                 <h2 class="section-title">Some of My Projects</h2>
                 <div class="project-card">
@@ -336,7 +335,7 @@
                 </div>
             </section>
 
-            <!-- CONTACT -->
+            
             <section id="contact">
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="contact-info">
@@ -351,13 +350,13 @@
             </section>
 
             <footer>
-                © 2026 Abiy Zenagabriel | Built with ❤️ using HTML, CSS &amp; JavaScript
+                © 2026 Abiy Zenagabriel | Built with using HTML, CSS &amp; JavaScript
             </footer>
         </div>
     </div>
 
     <script>
-        // Professional Scroll Animation
+      
         const sections = document.querySelectorAll("section");
 
         const observer = new IntersectionObserver((entries) => {
@@ -373,7 +372,7 @@
 
         sections.forEach(section => observer.observe(section));
 
-        // Smooth Navigation
+        
         document.querySelectorAll('.nav a').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
