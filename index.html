@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abiy Zenagabriel | Full-Stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --bg: #020617;
+            --panel: #0f172a;
+            --accent: #3b82f6;
+            --accent2: #60a5fa;
+            --text: #e5e7eb;
+            --muted: #94a3b8;
+            --card: rgba(255,255,255,0.04);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* LEFT SIDEBAR */
+        .left-panel {
+            width: 320px;
+            background: linear-gradient(180deg, #020617 0%, #0f172a 100%);
+            padding: 3.5rem 2rem;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            border-right: 1px solid rgba(255,255,255,0.08);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-panel h1 {
+            font-size: 2.1rem;
+            font-weight: 800;
+            text-align: center;
+            background: linear-gradient(90deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.3rem;
+        }
+
+        .title {
+            text-align: center;
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .nav a {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            margin-bottom: 8px;
+            text-decoration: none;
+            color: var(--muted);
+            border-radius: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav a:hover {
+            background: rgba(59, 130, 246, 0.15);
+            color: white;
+            transform: translateX(8px);
+        }
+
+        .nav a i {
+            width: 22px;
+        }
+
+        .social {
+            margin-top: auto;
+            display: flex;
+            justify-content: center;
+            gap: 22px;
+        }
+
+        .social a {
+            color: var(--muted);
+            font-size: 1.6rem;
+            transition: 0.3s;
+        }
+
+        .social a:hover {
+            color: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        /* RIGHT CONTENT */
+        .right-panel {
+            flex: 1;
+            padding: 4rem 4.5rem;
+            overflow-y: auto;
+            max-height: 100vh;
+        }
+
+        section {
+            margin-bottom: 5.5rem;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.9s ease;
+        }
+
+        section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 1.8rem;
+            background: linear-gradient(90deg, #60a5fa, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* ABOUT */
+        .about-text {
+            font-size: 1.15rem;
+            color: #cbd5e1;
+            max-width: 720px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 1.8rem;
+            transition: 0.4s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px -10px rgba(59, 130, 246, 0.25);
+        }
+
+        .skill-card h3 {
+            color: #60a5fa;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .skill-list li {
+            margin: 8px 0;
+            position: relative;
+            padding-left: 18px;
+        }
+
+        .skill-list li::before {
+            content: "▹";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        /* PROJECTS */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+        }
+
+        .project-card {
+            background: var(--card);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 18px;
+            padding: 2rem;
+            transition: 0.4s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent);
+            box-shadow: 0 25px 50px -12px rgba(59, 130, 246, 0.3);
+        }
+
+        .project-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.8rem;
+            color: #e2e8f0;
+        }
+
+        .project-card p {
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+            font-size: 0.98rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+        }
+
+        /* CONTACT */
+        .contact-info {
+            font-size: 1.15rem;
+            line-height: 2.1;
+        }
+
+        .contact-info a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 0 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
+            .container { flex-direction: column; }
+            .left-panel {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 2.5rem 1.5rem;
+            }
+            .right-panel {
+                padding: 2.5rem 1.5rem;
+                max-height: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- LEFT PANEL -->
+        <div class="left-panel">
+            <h1>Abiy Zenagabriel</h1>
+            <p class="title">Full-Stack Developer</p>
+
+            <div class="nav">
+                <a href="#about"><i class="fas fa-user"></i> About</a>
+                <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+                <a href="#projects"><i class="fas fa-briefcase"></i> Projects</a>
+                <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+
+            <div class="social">
+                <a href="https://github.com/abelixir" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="mailto:abiyzenagabriela@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="right-panel">
+
+            <!-- ABOUT -->
+            <section id="about">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    I'm a passionate Full-Stack Developer and Computer Science student at Adama Science and Technology University. 
+                    I specialize in building modern web applications using <strong>React</strong>, <strong>Node.js</strong>, and <strong>Express</strong>. 
+                    I love turning ideas into clean, functional, and user-friendly products.
+                    <br><br>
+                    Currently focused on creating real-world projects and delivering high-quality freelance services.
+                </p>
+            </section>
+
+            <!-- SKILLS -->
+            <section id="skills">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3><i class="fas fa-laptop-code"></i> Frontend</h3>
+                        <ul class="skill-list">
+                            <li>HTML5 & CSS3</li>
+                            <li>JavaScript (ES6+)</li>
+                            <li>React.js</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3><i class="fas fa-server"></i> Backend</h3>
+                        <ul class="skill-list">
+                            <li>Node.js</li>
+                            <li>Express.js</li>
+                            <li>MongoDB</li>
+                            <li>REST APIs</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <h3><i class="fas fa-tools"></i> Tools</h3>
+                        <ul class="skill-list">
+                            <li>Git & GitHub</li>
+                            <li>VS Code</li>
+                            <li>Postman</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PROJECTS -->
+            <section id="projects">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+
+                    <div class="project-card">
+                        <h3>Inventory Management System</h3>
+                        <p>Full-stack inventory system built with React, Express and MongoDB. Manage products, stock levels and reports efficiently.</p>
+                        <a href="https://github.com/abelixir/inventory-management-system" target="_blank" class="btn">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Coffee Cooperative System</h3>
+                        <p>Management platform for coffee cooperatives. Track members, production, and sales using React + Node.js + MongoDB.</p>
+                        <a href="https://github.com/abelixir/coffee-cooperative-management-system" target="_blank" class="btn">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Digital Innovation Hub</h3>
+                        <p>Platform connecting Ethiopian citizens, startups, mentors and investors. Built to support innovation and collaboration.</p>
+                        <a href="https://github.com/abelixir/digital-innovation-hub-ethiopia" target="_blank" class="btn">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Expense Tracker</h3>
+                        <p>Full-stack expense tracker that helps users record expenses and view daily, weekly and monthly summaries.</p>
+                        <a href="https://github.com/abelixir/expense-tracker" target="_blank" class="btn">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- CONTACT -->
+            <section id="contact">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> <a href="mailto:abiyzenagabriela@gmail.com">abiyzenagabriela@gmail.com</a></p>
+                    <p><strong>GitHub:</strong> <a href="https://github.com/abelixir" target="_blank">github.com/abelixir</a></p>
+                    <p style="margin-top: 1.5rem; color: #94a3b8;">
+                        Open for freelance projects and collaboration.
+                    </p>
+                </div>
+            </section>
+
+            <footer>
+                © 2026 Abiy Zenagabriel • Built with passion
+            </footer>
+        </div>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll("section");
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.15 });
+
+        sections.forEach(section => observer.observe(section));
+
+        document.querySelectorAll('.nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.getElementById(this.getAttribute('href').substring(1));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
